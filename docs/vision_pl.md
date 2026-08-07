@@ -13,7 +13,7 @@ Zdobycie doświadczenia w programowaniu frontendowych z wykorzystaniem Angular.
 
 ## Użytkownicy (Role)
 Administrator:
-Ma pelny dostęp do usatwień aplikacji, może korzystać z wszytskich widoków użytkowników, może dokonywać zmian systemowych.
+Ma pełny dostęp do ustawień aplikacji, może korzystać z wszytskich widoków użytkowników, może dokonywać zmian systemowych.
 Production Manager: 
 
 Production Operator: 
