@@ -1,5 +1,6 @@
 package com.waferproduction.waferproductionsystem.model;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class ProductionOrder {
@@ -9,6 +10,7 @@ public class ProductionOrder {
     private String product;
     private int totalQuantity;
     private String status;
+    private LocalDate orderDate;
 
     private List<Batch> batches;    //referencja do listy obiektów
 
@@ -60,6 +62,16 @@ public class ProductionOrder {
     //Moge sie do tej listy - która oryginalnie jest w Batch, wyciągnąć rzeczy z listy  z zewnatrz
     public List<Batch> getBatches(){
         return batches;
+    }
+
+    public LocalDate getOrderDate(){
+        return orderDate;
+    }
+
+
+    //setter
+    public void setBatches(List<Batch> batches){
+        this.batches = batches;
     }
 
 }
