@@ -1,0 +1,5 @@
+Rozbudowa logiki obsługi zleceń produkcyjnych.
+Implementacja automatycznego generowania partii Batch na podstawie ilości wafli oraz typu produktu znajdującego się w ProductionOrder.
+Praca z pętlami for, ArrayList, formatowaniem identyfikatorów partii oraz przekazywaniem danych pomiędzy metodami i obiektami.
+
+Równoległa praca nad analizą biznesową projektu

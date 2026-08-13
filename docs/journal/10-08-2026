@@ -1,0 +1,5 @@
+Implementacja oraz analiza działania kontrolera REST w Spring Boot.
+Zapoznanie z adnotacjami @RestController, @RequestMapping oraz @GetMapping i sposobem mapowania żądań HTTP na metody kontrolera.
+Testowanie endpointu aplikacji oraz analiza i rozwiązanie problemu konfliktu mapowania endpointów (Ambiguous mapping).
+
+Równoległa praca nad analizą biznesową projektu

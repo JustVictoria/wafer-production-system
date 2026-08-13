@@ -1,1 +1,7 @@
 Analiza projektu - dodanie kilku sekcji
+
+Kontynuacja prac nad modelem danych aplikacji MES.
+Analiza zależności pomiędzy klasami ProductionOrder oraz Batch,
+w szczególności sposobu reprezentowania relacji jednego zlecenia produkcyjnego do wielu partii produkcyjnych.
+Praca z konstruktorami, getterami i setterami oraz kolekcjami List w języku Java.
+Analiza sposobu przechowywania i przekazywania referencji do obiektów.
