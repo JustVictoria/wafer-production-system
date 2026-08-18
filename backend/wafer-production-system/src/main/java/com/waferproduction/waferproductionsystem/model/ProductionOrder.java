@@ -7,7 +7,7 @@ public class ProductionOrder {
 
     private String productionOrderId;
     private String customer;
-    private String product;
+    private Product product;
     private int totalQuantity;
     private String status;
     private LocalDate orderDate;
@@ -17,7 +17,12 @@ public class ProductionOrder {
 
 
     //Konstruktor dla danego zmówienia - ProductionOrder
-    public ProductionOrder(String productionOrderId, String customer, String product, int totalQuantity, String status, List<Batch> batches){
+    public ProductionOrder(String productionOrderId,
+                           String customer,
+                           Product product,
+                           int totalQuantity,
+                           String status,
+                           List<Batch> batches){
 
         this.productionOrderId = productionOrderId;
         this.customer = customer;
@@ -48,7 +53,7 @@ public class ProductionOrder {
         return customer;
     }
 
-    public String getProduct(){
+    public Product getProduct(){
         return product;
     }
 
