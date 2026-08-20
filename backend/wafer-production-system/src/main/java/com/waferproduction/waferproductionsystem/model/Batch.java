@@ -3,6 +3,7 @@ package com.waferproduction.waferproductionsystem.model;
 public class Batch {
     private String batchId;
     private int quantity;
+    //Dodatkowo:
     //private String status;
     //private String currentStep;
     //private String productionLine;
@@ -14,8 +15,8 @@ public class Batch {
         this.quantity = quantity;
     }
 
-    //gettery
 
+    //gettery
     public String getBatchId(){
         return batchId;
     }

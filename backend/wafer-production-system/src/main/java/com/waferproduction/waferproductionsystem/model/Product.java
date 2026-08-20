@@ -1,13 +1,27 @@
 package com.waferproduction.waferproductionsystem.model;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Product{
 
-    private ProductType type;
-    private ProductSpecification specification;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //sposób generowania nazw w id
+    private Long id; //kolumna 1
+
+    @Enumerated(EnumType.STRING)
+    private ProductType type; //kolumna 2
+
+    @Embedded
+    private ProductSpecification specification; //obiekt innej klasy
 
     public Product (ProductType type, ProductSpecification specification){
         this.type = type;
         this.specification = specification;
+    }
+
+    public Product(){ //Pusty konstruktor, beazargumentowy, który może utworzyć obiekt produkt z interfejsu
+
     }
 
     public ProductType getType(){

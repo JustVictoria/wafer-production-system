@@ -1,10 +1,18 @@
 package com.waferproduction.waferproductionsystem.model;
 
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+
+@Embeddable
 public class ProductSpecification {
 
     private double diameter;
     private double thickness;
+
+    @Enumerated(EnumType.STRING)
     private CrystalOrientation crystalOrientation;
+    @Enumerated(EnumType.STRING)
     private SurfaceFinish surfaceFinish;
 
     public ProductSpecification(double diameter, double thickness, CrystalOrientation crystalOrientation, SurfaceFinish surfaceFinish){
