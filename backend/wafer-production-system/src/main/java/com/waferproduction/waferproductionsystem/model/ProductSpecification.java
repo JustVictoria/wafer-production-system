@@ -22,6 +22,9 @@ public class ProductSpecification {
         this.surfaceFinish = surfaceFinish;
     }
 
+    public ProductSpecification(){
+    }
+
     public double getDiameter(){
         return diameter;
     }
