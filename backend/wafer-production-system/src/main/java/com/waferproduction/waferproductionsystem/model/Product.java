@@ -32,4 +32,7 @@ public class Product{
         return specification;
     }
 
+    public void setType(ProductType type){
+        this.type = type;
+    }
 }

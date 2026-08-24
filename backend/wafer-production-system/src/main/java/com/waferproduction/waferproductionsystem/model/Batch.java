@@ -1,8 +1,16 @@
 package com.waferproduction.waferproductionsystem.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity
 public class Batch {
+    @Id
     private String batchId;
     private int quantity;
+    @ManyToOne
+    private ProductionOrder productionOrder;
     //Dodatkowo:
     //private String status;
     //private String currentStep;
@@ -13,6 +21,10 @@ public class Batch {
     public Batch(String batchId, int quantity){
         this.batchId = batchId;
         this.quantity = quantity;
+    }
+
+    //Pusty Konstruktor dla (JPA)/(Entity)
+    public Batch(){
     }
 
 
