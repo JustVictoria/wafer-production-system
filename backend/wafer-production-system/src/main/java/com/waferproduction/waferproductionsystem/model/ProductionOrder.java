@@ -12,7 +12,7 @@ public class ProductionOrder{
     private String productionOrderId;
     private String customer;
     @ManyToOne //Ponieważ wiele ProductionOrder może dotyczyć jednego typu produktu (A, B, C, D)
-    private Product product; //obiekt klasy produkt - w której jest type(A, B, C, D, E) i specification(wymiary, grubość, powłoka, wykończeniePowierzchni)
+    private WaferType product; //obiekt klasy produkt - w której jest type(A, B, C, D, E) i specification(wymiary, grubość, powłoka, wykończeniePowierzchni)
     private int totalQuantity; // ile wafli obejmuje zlecenie
     private LocalDate orderDate;
     //private LocalDate dueDate;
@@ -20,10 +20,10 @@ public class ProductionOrder{
 
     @Enumerated(EnumType.STRING)
     private StatusProductionOrder statusPO;
-    @OneToMany
+    @OneToMany(mappedBy = "productionOrder")
     private List<Batch> batches;
 
-    public ProductionOrder(String productionOrderId, String customer, Product product, int totalQuantity, LocalDate orderDate, StatusProductionOrder statusPO, List<Batch> batches ){
+    public ProductionOrder(String productionOrderId, String customer, WaferType product, int totalQuantity, LocalDate orderDate, StatusProductionOrder statusPO, List<Batch> batches ){
         this.productionOrderId = productionOrderId;
         this.customer = customer;
         this.product = product;
@@ -47,7 +47,7 @@ public class ProductionOrder{
         return customer;
     }
 
-    public Product getProduct(){
+    public WaferType getProduct(){
         return product;
     }
 
@@ -65,5 +65,12 @@ public class ProductionOrder{
 
     public List<Batch> getBatches(){
         return batches;
+    }
+
+
+    //settery - one przydadzą się do U - update dla całości CRUD
+
+    public void setCustomer(String customer){
+        this.customer = customer;
     }
 }

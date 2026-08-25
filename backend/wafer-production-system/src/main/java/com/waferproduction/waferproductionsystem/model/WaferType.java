@@ -3,7 +3,7 @@ package com.waferproduction.waferproductionsystem.model;
 import jakarta.persistence.*;
 
 @Entity
-public class Product{
+public class WaferType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //sposób generowania nazw w id
@@ -15,12 +15,12 @@ public class Product{
     @Embedded
     private ProductSpecification specification; //obiekt innej klasy
 
-    public Product (ProductType type, ProductSpecification specification){
+    public WaferType(ProductType type, ProductSpecification specification){
         this.type = type;
         this.specification = specification;
     }
 
-    public Product(){ //Pusty konstruktor, beazargumentowy, który może utworzyć obiekt produkt z interfejsu
+    public WaferType(){ //Pusty konstruktor, beazargumentowy, który może utworzyć obiekt produkt z interfejsu
 
     }
 
