@@ -1,24 +1,44 @@
 package com.waferproduction.waferproductionsystem.controller;
 
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//import com.waferproduction.waferproductionsystem.model.Batch;
-//import com.waferproduction.waferproductionsystem.model.ProductionOrder;
-//import org.springframework.web.bind.annotation.GetMapping;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RestController;
-//
-//@RestController //Ta klasa będzie obsługiwała żądania HTTP(odebranie i obsługiwanie) a potem odpowiedz
-//@RequestMapping("/api/production-orders")   //Wszystkie żądania obsługiwane przez tę klasę zaczynają się od /api/production-orders.”
-//
-//public class ProductionOrderController {
-//@GetMapping //Jeśli przyjdzie żądanie HTTP typu *GET*, uruchomi się metoda poniżej
-//    public ProductionOrder getProductionOrders(){
-//    ProductionOrder order1 = new ProductionOrder("A111",
-//            "Apple","type_A", 100, "Created",List.of){
-//
-//    };
-//    return order1;
-//}
-//}
+import com.waferproduction.waferproductionsystem.model.ProductionOrder;
+import com.waferproduction.waferproductionsystem.service.ProductionOrderService;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/production-order") //bez nazwy klasy controller, bo chodzi o zasób
+public class ProductionOrderController{
+
+    //konstruktor
+    private final ProductionOrderService productionOrderService;
+    public ProductionOrderController(ProductionOrderService productionOrderService){
+        this.productionOrderService = productionOrderService;
+    }
+
+    @PostMapping
+    public ProductionOrder createProductionOrder(@RequestBody ProductionOrder productionOrder){
+        return productionOrderService.createProductionOrder(productionOrder);
+    }
+
+    @GetMapping
+        public List<ProductionOrder> getAllProductionOrders(){
+            return productionOrderService.getAllProductionOrders();
+    }
+
+    @GetMapping("/{id}")
+    public ProductionOrder getProductionOrderById(@PathVariable String id){
+        return productionOrderService.getProductionOrderById(id);
+    }
+
+    @PutMapping("/{id}")
+    public ProductionOrder updateProductionOrder(@PathVariable String id , @RequestBody ProductionOrder productionOrder){
+        return productionOrderService.updateProductionOrder(id, productionOrder);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProductionOrder(@PathVariable String id) {
+        productionOrderService.deleteProductionOrder(id);
+    }
+
+}

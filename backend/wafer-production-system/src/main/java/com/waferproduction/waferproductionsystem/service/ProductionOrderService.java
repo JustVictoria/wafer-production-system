@@ -32,18 +32,33 @@ public class ProductionOrderService {
     }
 
     //U - update
-    public ProductionOrder updateProductionOrder(String id, ProductionOrder productionOrder){
+    public ProductionOrder updateProductionOrder(String id, ProductionOrder productionOrder) {
 
         ProductionOrder existingProductionOrder =
                 productionOrderRepository.findById(id).orElse(null);
 
-         if(existingProductionOrder == null){
-             return null;
-         }
-         existingProductionOrder.setCustomer(productionOrder.getCustomer());
-
-
+        if (existingProductionOrder == null) {
+            return null;
+        }
+        existingProductionOrder.setCustomer(productionOrder.getCustomer());
+        existingProductionOrder.setProduct(productionOrder.getProduct());
+        existingProductionOrder.setOrderDate(productionOrder.getOrderDate());
+        existingProductionOrder.setTotalQuantity(productionOrder.getTotalQuantity());
+        return productionOrderRepository.save(existingProductionOrder);
     }
+
+    //D - delete
+    public void deleteProductionOrder(String id) {
+
+        ProductionOrder existingProductionOrder =
+                productionOrderRepository.findById(id).orElse(null);
+
+        if(existingProductionOrder ==null){
+            return; //zakoncz wykonywanie tej metody w tym miejscu
+        }
+        productionOrderRepository.delete(existingProductionOrder);
+
+}
 
 
 }

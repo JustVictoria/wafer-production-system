@@ -73,4 +73,16 @@ public class ProductionOrder{
     public void setCustomer(String customer){
         this.customer = customer;
     }
+
+    public void setProduct(WaferType product){
+        this.product = product;
+    }
+
+    public void setTotalQuantity(int totalQuantity){
+        this.totalQuantity = totalQuantity;
+    }
+
+    public void setOrderDate(LocalDate orderDate){
+        this.orderDate = orderDate;
+    }
 }
