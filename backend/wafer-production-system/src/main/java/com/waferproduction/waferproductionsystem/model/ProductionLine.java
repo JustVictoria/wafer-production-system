@@ -12,6 +12,7 @@ public class ProductionLine {
     private String productionLineId;
     @OneToMany(mappedBy="productionLine")
     private List<Machine> machines;
+    @OneToMany(mappedBy = "productionLine")
     private List<Batch> productionQueue;
 
 

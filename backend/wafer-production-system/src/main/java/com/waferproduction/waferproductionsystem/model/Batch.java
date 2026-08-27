@@ -11,6 +11,8 @@ public class Batch {
     private int quantity;
     @ManyToOne
     private ProductionOrder productionOrder;
+    @ManyToOne
+    private ProductionLine productionLine;
     //Dodatkowo:
     //private String status;
     //private String currentStep;
@@ -35,6 +37,11 @@ public class Batch {
 
     public int getQuantity(){
         return quantity;
+    }
+
+    //settery
+    public void setProductionLine(ProductionLine productionLine){
+        this.productionLine = productionLine;
     }
 
 }
