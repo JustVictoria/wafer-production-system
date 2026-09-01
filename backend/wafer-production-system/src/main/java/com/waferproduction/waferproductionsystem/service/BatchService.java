@@ -49,6 +49,12 @@ public class BatchService {
 
         return batchRepository.save(existingBatch);
     }
+    public Batch startProduction(String batchId){
 
+        Batch existingBatch = batchRepository.findById(batchId).orElse(null);
+
+
+        return existingBatch;
+    }
 
 }
